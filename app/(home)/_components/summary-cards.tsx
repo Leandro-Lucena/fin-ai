@@ -26,7 +26,7 @@ const SummaryCards = async ({
     <div className="space-y-6">
       {/* PRIMEIRO CARD */}
       <SummaryCard
-        icon={<WalletIcon size={16} />}
+        icon={<WalletIcon size={30} />}
         title="Saldo"
         amount={balance}
         size="large"
@@ -37,19 +37,19 @@ const SummaryCards = async ({
 
       <div className="grid grid-cols-3 gap-6">
         <SummaryCard
-          icon={<PiggyBankIcon size={16} />}
-          title="Investido"
-          amount={investmentsTotal}
-        />
-        <SummaryCard
-          icon={<TrendingUpIcon size={16} className="text-primary" />}
-          title="Receita"
+          icon={<TrendingUpIcon size={25} className="text-primary" />}
+          title="Receitas"
           amount={depositsTotal}
         />
         <SummaryCard
-          icon={<TrendingDownIcon size={16} className="text-red-500" />}
+          icon={<TrendingDownIcon size={25} className="text-red-500" />}
           title="Despesas"
           amount={expensesTotal}
+        />
+        <SummaryCard
+          icon={<PiggyBankIcon size={25} />}
+          title="Investido"
+          amount={investmentsTotal}
         />
       </div>
     </div>

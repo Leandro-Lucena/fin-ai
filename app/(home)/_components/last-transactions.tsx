@@ -17,7 +17,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
       return "text-red-500";
     }
     if (transaction.type === TransactionType.DEPOSIT) {
-      return "text-green-500";
+      return "text-primary";
     }
     return "text-white";
   };
@@ -42,13 +42,13 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
             key={transaction.id}
           >
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-white bg-opacity-[3%] p-3">
+              <div className="rounded-lg bg-white bg-opacity-[3%]">
                 <Image
                   src={
                     TRANSACTIONS_PAYMENT_METHOD_ICONS[transaction.paymentMethod]
                   }
-                  height={30}
-                  width={30}
+                  height={45}
+                  width={45}
                   alt={transaction.paymentMethod}
                 />
               </div>

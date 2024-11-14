@@ -38,13 +38,7 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
     }
   };
   return (
-    <Dialog
-    // onOpenChange={(open) => {
-    //   if (!open) {
-    //     setReport(null);
-    //   }
-    // }}
-    >
+    <Dialog>
       <DialogTrigger asChild>
         <Button variant="ghost">
           Relatório IA
@@ -61,7 +55,7 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
                 movimentações.
               </DialogDescription>
             </DialogHeader>
-            <ScrollArea className="prose prose-h3:text-white prose-h4:text-white prose-strong:text-white max-h-[450px] text-white">
+            <ScrollArea className="prose max-h-[450px] text-white prose-h3:text-white prose-h4:text-white prose-strong:text-white">
               <Markdown>{report}</Markdown>
             </ScrollArea>
             <DialogFooter>
