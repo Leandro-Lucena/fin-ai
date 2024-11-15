@@ -20,7 +20,7 @@ const AddTransactionButton = ({
   return (
     <>
       <Button
-        className="rounded-full text-lg font-bold"
+        className="rounded-full px-3 text-base font-bold"
         onClick={
           !userCanAddTransaction
             ? () => setDialogSubscriptionIsOpen(true)

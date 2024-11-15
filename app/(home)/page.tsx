@@ -32,27 +32,27 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col space-y-6 overflow-hidden p-6">
-        <div className="flex justify-between">
-          <h1 className="text-2xl font-bold">Dashboard </h1>
-          <div className="flex items-center gap-3">
-            <AiReportButton
-              month={month}
-              hasPremiumPlan={
-                user.publicMetadata.subscriptionPlan === "premium"
-              }
-            />
+      <div className="flex flex-col space-y-6 overflow-auto p-6 md:overflow-hidden">
+        <div className="grid grid-cols-3 items-center space-y-4">
+          <h1 className="col-span-3 w-full text-center text-2xl font-bold md:col-span-1 md:text-left">
+            Dashboard
+          </h1>
+          <span className="col-span-2 pe-4 md:col-span-1">
             <TimeSelect />
-          </div>
+          </span>
+          <AiReportButton
+            month={month}
+            hasPremiumPlan={user.publicMetadata.subscriptionPlan === "premium"}
+          />
         </div>
-        <div className="grid grid-cols-[2fr,1fr] gap-6 overflow-hidden">
-          <div className="flex flex-col gap-6 overflow-hidden">
+        <div className="grid grid-cols-3 gap-6 md:overflow-hidden">
+          <div className="col-span-3 flex flex-col gap-3 overflow-hidden md:col-span-2 md:gap-6">
             <SummaryCards
               month={month}
               {...dashboard}
               userCanAddTransaction={userCanAddTransactions}
             />
-            <div className="grid h-full grid-cols-2 grid-rows-1 gap-6 overflow-hidden">
+            <div className="grid h-full grid-rows-1 gap-3 overflow-hidden md:grid-cols-2 md:gap-6">
               <ExpensesPerCategory
                 expensesPerCategory={dashboard.totalExpensePerCategory}
               />

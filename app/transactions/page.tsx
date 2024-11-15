@@ -25,13 +25,17 @@ const TransactionsPage = async () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col space-y-6 overflow-hidden p-6">
+      <div className="flex flex-col space-y-6 overflow-hidden px-1 py-6 md:px-6">
         {/* TÍTULO E BOTÃO */}
-        <div className="flex w-full items-center justify-between">
-          <h1 className="text-2xl font-bold">Transações</h1>
-          <AddTransactionButton
-            userCanAddTransaction={userCanAddTransactions}
-          />
+        <div className="w-full items-center justify-between space-y-4 md:flex">
+          <h1 className="w-full text-center text-2xl font-bold md:text-left">
+            Transações
+          </h1>
+          <span className="flex justify-center">
+            <AddTransactionButton
+              userCanAddTransaction={userCanAddTransactions}
+            />
+          </span>
         </div>
         <ScrollArea className="h-full rounded-md border">
           <DataTable

@@ -17,11 +17,11 @@ import { ScrollArea } from "@/app/_components/ui/scroll-area";
 
 const chartConfig = {
   [TransactionType.INVESTMENT]: {
-    label: "Investido",
+    label: "Investimentos",
     color: "#FFFFFF",
   },
   [TransactionType.DEPOSIT]: {
-    label: "Receita",
+    label: "Receitas",
     color: "#55B02E",
   },
   [TransactionType.EXPENSE]: {
@@ -87,17 +87,17 @@ const TransactionPieChart = ({
           <div className="space-y-3">
             <PercentageItem
               icon={<TrendingUpIcon size={20} className="text-primary" />}
-              title="Receita"
+              title="Receitas"
               value={typesPercentage[TransactionType.DEPOSIT]}
             />
             <PercentageItem
-              icon={<TrendingDownIcon size={20} className="text-red-500" />}
+              icon={<TrendingDownIcon size={20} className="text-danger" />}
               title="Despesas"
               value={typesPercentage[TransactionType.EXPENSE]}
             />
             <PercentageItem
               icon={<PiggyBankIcon size={20} />}
-              title="Investido"
+              title="Investimentos"
               value={typesPercentage[TransactionType.INVESTMENT]}
             />
           </div>

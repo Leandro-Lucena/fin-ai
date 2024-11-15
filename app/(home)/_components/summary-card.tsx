@@ -19,7 +19,7 @@ const SummaryCard = ({
 }: SummaryCardProps) => {
   const getAmountColor = (amount: number) => {
     if (amount < 0) {
-      return "text-red-500";
+      return "text-danger";
     }
     if (amount > 0) {
       return "text-primary";
@@ -29,27 +29,27 @@ const SummaryCard = ({
 
   return (
     <Card className={`${size === "large" ? "bg-white bg-opacity-5" : ""}`}>
-      <CardHeader className="flex-row items-center gap-4">
-        {icon}
-        <p
-          className={`${size === "small" ? "text-lg text-muted-foreground" : "text-xl text-white opacity-70"}`}
+      <CardHeader className="flex-row items-center justify-between gap-4">
+        <span
+          className={`flex gap-2 ${size === "small" ? "text-lg text-muted-foreground" : "text-xl text-white opacity-70"}`}
         >
+          {icon}
+
           {title}
-        </p>
+        </span>
+        {size === "large" && (
+          <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
+        )}
       </CardHeader>
-      <CardContent className="flex justify-between">
+      <CardContent className="flex justify-between overflow-hidden">
         <p
-          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"} ${size === "large" && getAmountColor(amount)} ${title === "Despesas" && "text-red-500"} ${title === "Receitas" && "text-primary"}`}
+          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"} ${size === "large" && getAmountColor(amount)} ${title === "Despesas" && "text-danger"} ${title === "Receitas" && "text-primary"}`}
         >
           {Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
           }).format(amount)}
         </p>
-
-        {size === "large" && (
-          <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
-        )}
       </CardContent>
     </Card>
   );

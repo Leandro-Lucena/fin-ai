@@ -40,7 +40,7 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="outline" className="ms-auto rounded-full">
           Relatório IA
           <BotIcon />
         </Button>
@@ -77,7 +77,8 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
             <DialogHeader>
               <DialogTitle>Relatório IA</DialogTitle>
               <DialogDescription>
-                Você precisa de um plano premium para gerar relatórios com IA.
+                Você precisa de um plano premium para gerar relatórios com
+                Inteligência Artificial.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
