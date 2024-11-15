@@ -40,9 +40,9 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="ms-auto rounded-full">
+        <Button variant="outline" className="ms-auto rounded-lg px-3">
           Relatório IA
-          <BotIcon />
+          <BotIcon className="hidden md:block" />
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-[600px]">

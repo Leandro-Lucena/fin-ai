@@ -37,12 +37,12 @@ const SummaryCards = async ({
 
       <div className="grid gap-2 md:grid-cols-3 md:gap-6">
         <SummaryCard
-          icon={<TrendingUpIcon size={25} className="text-primary" />}
+          icon={<TrendingUpIcon size={25} className="text-green-500" />}
           title="Receitas"
           amount={depositsTotal}
         />
         <SummaryCard
-          icon={<TrendingDownIcon size={25} className="text-danger" />}
+          icon={<TrendingDownIcon size={25} className="text-red-500" />}
           title="Despesas"
           amount={expensesTotal}
         />

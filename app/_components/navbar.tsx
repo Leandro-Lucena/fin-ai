@@ -1,7 +1,6 @@
 "use client";
 
 import { UserButton } from "@clerk/nextjs";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -11,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { MenuIcon } from "lucide-react";
+import { ChartNoAxesCombinedIcon, MenuIcon } from "lucide-react";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -48,7 +47,11 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <Image src="/logo.svg" width={173} height={39} alt="Finanace AI" />
+        <span className="flex gap-3 rounded-lg bg-white bg-opacity-5 p-1 px-2">
+          <ChartNoAxesCombinedIcon size={35} className="text-primary" />
+          <span className="text-3xl font-bold">Fin.AI</span>
+        </span>
+        {/* <Image src="/logo.svg" width={173} height={39} alt="Finanace AI" /> */}
         <div className="ms-8 hidden gap-10 md:flex">
           {generateLink("Dashboard", "/")}
           {generateLink("Transações", "/transactions")}

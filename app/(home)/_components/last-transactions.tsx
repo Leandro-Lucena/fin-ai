@@ -14,10 +14,10 @@ interface LastTransactionsProps {
 const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
   const getAmountColor = (transaction: Transaction) => {
     if (transaction.type === TransactionType.EXPENSE) {
-      return "text-danger";
+      return "text-red-500";
     }
     if (transaction.type === TransactionType.DEPOSIT) {
-      return "text-primary";
+      return "text-green-500";
     }
     return "text-white";
   };
@@ -31,7 +31,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
     <ScrollArea className="col-span-3 rounded-md border md:col-span-1">
       <CardHeader className="flex-row items-center justify-between">
         <CardTitle className="font-bold">Últimas transações</CardTitle>
-        <Button variant="outline" className="rounded-full font-bold" asChild>
+        <Button variant="outline" className="rounded-lg font-bold" asChild>
           <Link href="/transactions">Ver mais</Link>
         </Button>
       </CardHeader>

@@ -52,7 +52,9 @@ const SubscriptionPage = async () => {
               </div>
               <div className="flex items-center gap-3">
                 <XIcon />
-                <p className="text-muted-foreground">Relatórios de IA</p>
+                <p className="text-muted-foreground">
+                  Relatório por Inteligência Artificial
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -79,7 +81,9 @@ const SubscriptionPage = async () => {
               </div>
               <div className="flex items-center gap-3">
                 <CheckIcon className="text-primary" />
-                <p className="text-muted-foreground">Relatórios de IA</p>
+                <p className="text-muted-foreground">
+                  Relatório por Inteligência Artificial
+                </p>
               </div>
               <AcquirePlanButton />
             </CardContent>

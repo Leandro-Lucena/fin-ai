@@ -19,10 +19,10 @@ const SummaryCard = ({
 }: SummaryCardProps) => {
   const getAmountColor = (amount: number) => {
     if (amount < 0) {
-      return "text-danger";
+      return "text-red-500";
     }
     if (amount > 0) {
-      return "text-primary";
+      return "text-green-500";
     }
     return "text-white";
   };
@@ -43,7 +43,7 @@ const SummaryCard = ({
       </CardHeader>
       <CardContent className="flex justify-between overflow-hidden">
         <p
-          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"} ${size === "large" && getAmountColor(amount)} ${title === "Despesas" && "text-danger"} ${title === "Receitas" && "text-primary"}`}
+          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"} ${size === "large" && getAmountColor(amount)} ${title === "Despesas" && "text-red-500"} ${title === "Receitas" && "text-green-500"}`}
         >
           {Intl.NumberFormat("pt-BR", {
             style: "currency",

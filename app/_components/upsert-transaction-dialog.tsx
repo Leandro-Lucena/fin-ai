@@ -85,7 +85,7 @@ const UpsertTransactionDialog = ({
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues ?? {
-      amount: 50,
+      amount: 0,
       category: TransactionCategory.OTHER,
       date: new Date(),
       name: "",
@@ -116,8 +116,8 @@ const UpsertTransactionDialog = ({
         }
       }}
     >
-      <DialogContent className="max-h-[100vh] p-0">
-        <ScrollArea className="h-full max-h-[100vh] px-6 py-6">
+      <DialogContent className="max-h-[90vh] p-0">
+        <ScrollArea className="h-full max-h-[90vh] px-6 py-6">
           <DialogHeader>
             <DialogTitle>
               {isUpdate ? "Atualizar" : "Criar"} transação

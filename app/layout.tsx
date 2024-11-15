@@ -10,8 +10,8 @@ const mulish = Mulish({
 });
 
 export const metadata: Metadata = {
-  title: "Finance AI",
-  description: "Sistema de finanças AI",
+  title: "Fin.AI",
+  description: "Sistema de finanças pessoais",
 };
 
 export default function RootLayout({

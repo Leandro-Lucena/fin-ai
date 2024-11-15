@@ -19,7 +19,7 @@ const EditTransactionButton = ({ transaction }: EditTransactionButtonProps) => {
       <Button
         variant="ghost"
         size="icon"
-        className="text-muted-foreground"
+        className="text-primary"
         onClick={() => setDialogIsOpen(true)}
       >
         <PencilIcon />
@@ -27,7 +27,11 @@ const EditTransactionButton = ({ transaction }: EditTransactionButtonProps) => {
       <UpsertTransactionDialog
         isOpen={dialogIsOpen}
         setIsOpen={setDialogIsOpen}
-        defaultValues={{ ...transaction, amount: Number(transaction.amount) }}
+        defaultValues={{
+          ...transaction,
+          amount: Number(transaction.amount),
+          date: new Date(transaction.date),
+        }}
         transactionId={transaction.id}
       />
     </>
