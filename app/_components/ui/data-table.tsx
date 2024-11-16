@@ -24,6 +24,7 @@ import {
 } from "./table";
 import { Input } from "./input";
 import { useState } from "react";
+import { Button } from "./button";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -86,6 +87,11 @@ export function DataTable<TData, TValue>({
       columnFilters,
       columnVisibility,
     },
+    initialState: {
+      pagination: {
+        pageSize: 8,
+      },
+    },
   });
 
   return (
@@ -128,7 +134,7 @@ export function DataTable<TData, TValue>({
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="md:px-auto px-0">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
@@ -149,6 +155,24 @@ export function DataTable<TData, TValue>({
             )}
           </TableBody>
         </Table>
+      </div>
+      <div className="flex items-center justify-end space-x-2 p-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.previousPage()}
+          disabled={!table.getCanPreviousPage()}
+        >
+          Voltar
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.nextPage()}
+          disabled={!table.getCanNextPage()}
+        >
+          Avançar
+        </Button>
       </div>
     </div>
   );

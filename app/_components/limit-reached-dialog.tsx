@@ -38,7 +38,9 @@ const LimitReachedDialog = ({ isOpen, setIsOpen }: LimitReachedDialogProps) => {
             </Button>
           </DialogClose>
           <Button asChild>
-            <Link href="/subscription">Assinar plano premium</Link>
+            <Link href="/subscription" className="mb-2">
+              Assinar plano premium
+            </Link>
           </Button>
         </DialogFooter>
       </DialogContent>

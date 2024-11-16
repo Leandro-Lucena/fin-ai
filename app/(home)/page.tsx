@@ -32,7 +32,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col space-y-6 overflow-auto p-6 md:overflow-hidden">
+      <div className="flex flex-col space-y-6 overflow-auto p-6">
         <div className="grid grid-cols-3 items-center space-y-4">
           <h1 className="col-span-3 w-full text-center text-2xl font-bold md:col-span-1 md:text-left">
             Dashboard
@@ -45,7 +45,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
             hasPremiumPlan={user.publicMetadata.subscriptionPlan === "premium"}
           />
         </div>
-        <div className="grid grid-cols-3 gap-6 md:overflow-hidden">
+        <div className="grid grid-cols-3 gap-6">
           <div className="col-span-3 flex flex-col gap-3 overflow-hidden md:col-span-2 md:gap-6">
             <SummaryCards
               month={month}

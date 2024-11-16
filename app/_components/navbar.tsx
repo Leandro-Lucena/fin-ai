@@ -47,7 +47,7 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <span className="flex gap-3 rounded-lg bg-white bg-opacity-5 p-1 px-2">
+        <span className="flex gap-3 rounded-lg p-1 px-2" id="logoAi">
           <ChartNoAxesCombinedIcon size={35} className="text-primary" />
           <span className="text-3xl font-bold">Fin.AI</span>
         </span>

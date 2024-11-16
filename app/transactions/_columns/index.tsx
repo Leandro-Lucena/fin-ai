@@ -23,9 +23,9 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
 
     cell: ({ row: { original: transaction } }) => (
       <>
-        <span className="hidden md:block">{transaction.name}</span>
+        <span className="hidden ps-3 md:block">{transaction.name}</span>
         <DropdownMenu>
-          <DropdownMenuTrigger className="md:hidden">
+          <DropdownMenuTrigger className="w-36 truncate ps-2 text-left md:hidden">
             {transaction.name}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-80">
@@ -89,7 +89,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
             year: "numeric",
           })}
         </span>
-        <span className="md:hidden">
+        <span className="mx-2 md:hidden">
           {new Date(transaction.date).toLocaleDateString("pt-BR", {
             day: "2-digit",
             month: "2-digit",
@@ -102,21 +102,24 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "amount",
     header: "Valor",
-    cell: ({ row: { original: transaction } }) =>
-      new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(Number(transaction.amount)),
+    cell: ({ row: { original: transaction } }) => (
+      <span className="mx-2">
+        {new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        }).format(Number(transaction.amount))}
+      </span>
+    ),
   },
   {
     accessorKey: "actions",
     header: "",
     cell: ({ row: { original: transaction } }) => {
       return (
-        <div className="">
+        <span>
           <EditTransactionButton transaction={transaction} />
           <DeleteTransactionButton transactionId={transaction.id} />
-        </div>
+        </span>
       );
     },
   },

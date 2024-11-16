@@ -4,6 +4,7 @@ import { db } from "@/app/_lib/prisma";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import OpenAI from "openai";
 import { GenerateAiReportSchema, generateAiReportSchema } from "./schema";
+import { TRANSACTION_CATEGORY_LABELS } from "@/app/_constants/transactions";
 
 export const generateAiReport = async ({ month }: GenerateAiReportSchema) => {
   generateAiReportSchema.parse({ month });
@@ -27,7 +28,7 @@ export const generateAiReport = async ({ month }: GenerateAiReportSchema) => {
       },
     },
   });
-  const content = `Gere um relatório com insights sobre as minhas finanças, com dicas e orientações de como melhorar minha vida financeira. As transações estão divididas por ponto e vírgula. A estrutura de cada uma é {DATA}-{TIPO}-{VALOR}-{CATEGORIA}. São elas:: ${transactions.map((transaction) => `${transaction.date.toLocaleDateString("pt-BR")}-${transaction.type}-${transaction.amount}-${transaction.category}`).join("; ")}`;
+  const content = `Gere um relatório com insights sobre as minhas finanças, com dicas e orientações de como melhorar minha vida financeira. As transações estão divididas por ponto e vírgula. A estrutura de cada uma é {DATA}-{TIPO}-{VALOR}-{CATEGORIA}. São elas:: ${transactions.map((transaction) => `${transaction.date.toLocaleDateString("pt-BR")}-${transaction.type}-${transaction.amount}-${TRANSACTION_CATEGORY_LABELS[transaction.category]}`).join("; ")}`;
   const completion = await openAi.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [

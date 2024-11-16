@@ -17,6 +17,8 @@ import { useState } from "react";
 import Markdown from "react-markdown";
 import { ScrollArea } from "@/app/_components/ui/scroll-area";
 import Link from "next/link";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 interface AiReportButtonProps {
   hasPremiumPlan: boolean;
@@ -37,6 +39,45 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
       setReportIsLoading(false);
     }
   };
+  const handleDownloadPDF = async () => {
+    if (!report) return;
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const margin = 10;
+    const lineHeight = 10;
+    let y = margin;
+    const htmlElement = document.getElementById("logoAi");
+    if (htmlElement) {
+      try {
+        htmlElement.style.padding = "10px";
+        htmlElement.style.backgroundColor = "black";
+        const canvas = await html2canvas(htmlElement);
+        const imgData = canvas.toDataURL("image/png");
+        const imgWidth = pageWidth / 4;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const xPosition = pageWidth - margin - imgWidth;
+        doc.addImage(imgData, "PNG", xPosition, y, imgWidth, imgHeight);
+        htmlElement.style.backgroundColor = "";
+        htmlElement.style.padding = "";
+        y += imgHeight + lineHeight;
+      } catch (error) {
+        console.error("Erro ao capturar o elemento HTML:", error);
+        return;
+      }
+    }
+    const lines = doc.splitTextToSize(report, pageWidth - margin * 2);
+    lines.forEach((line: string) => {
+      if (y + lineHeight > pageHeight - margin) {
+        doc.addPage();
+        y = margin;
+      }
+      doc.text(line, margin, y);
+      y += lineHeight;
+    });
+    doc.save(`Relatório-AI-${month}.pdf`);
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -60,20 +101,25 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
             </ScrollArea>
             <DialogFooter>
               <DialogClose asChild>
-                <Button variant="ghost">Cancelar</Button>
+                <Button variant="ghost">
+                  {report ? "Fechar" : "Cancelar"}
+                </Button>
               </DialogClose>
-              <Button
-                onClick={handleGenerateReportClick}
-                disabled={reportIsLoading}
-              >
-                {reportIsLoading && <Loader2Icon className="animate-spin" />}
-                Gerar relatório
-              </Button>
+              {!report ? (
+                <Button
+                  onClick={handleGenerateReportClick}
+                  disabled={reportIsLoading}
+                >
+                  {reportIsLoading && <Loader2Icon className="animate-spin" />}
+                  Gerar relatório
+                </Button>
+              ) : (
+                <Button onClick={handleDownloadPDF}>Baixar relatório</Button>
+              )}
             </DialogFooter>
           </>
         ) : (
           <>
-            {" "}
             <DialogHeader>
               <DialogTitle>Relatório IA</DialogTitle>
               <DialogDescription>
@@ -83,10 +129,14 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
             </DialogHeader>
             <DialogFooter>
               <DialogClose asChild>
-                <Button variant="ghost">Cancelar</Button>
+                <Button type="button" variant="outline">
+                  Cancelar
+                </Button>
               </DialogClose>
               <Button asChild>
-                <Link href="/subscription">Assinar plano premium</Link>
+                <Link href="/subscription" className="mb-2">
+                  Assinar plano premium
+                </Link>
               </Button>
             </DialogFooter>
           </>

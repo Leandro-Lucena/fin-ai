@@ -116,8 +116,8 @@ const UpsertTransactionDialog = ({
         }
       }}
     >
-      <DialogContent className="max-h-[90vh] p-0">
-        <ScrollArea className="h-full max-h-[90vh] px-6 py-6">
+      <DialogContent className="max-h-[94vh] p-0">
+        <ScrollArea className="h-full max-h-[88vh] p-5">
           <DialogHeader>
             <DialogTitle>
               {isUpdate ? "Atualizar" : "Criar"} transação
@@ -126,7 +126,10 @@ const UpsertTransactionDialog = ({
           </DialogHeader>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-8 px-2"
+            >
               <FormField
                 control={form.control}
                 name="name"
@@ -263,7 +266,7 @@ const UpsertTransactionDialog = ({
                     Cancelar
                   </Button>
                 </DialogClose>
-                <Button type="submit">
+                <Button type="submit" className="mb-2">
                   {isUpdate ? "Atualizar" : "Adicionar"}
                 </Button>
               </DialogFooter>
