@@ -1,4 +1,4 @@
-# 🏦 Fin.AI
+# 💲 Fin.AI
 
 Fin.AI é uma aplicação de controle financeiro desenvolvida para ajudar na organização e gerenciamento do orçamento mensal. Com uma interface intuitiva e funcionalidades avançadas, o Fin.AI permite acompanhar despesas, receitas e planejar melhor seu orçamento.
 
