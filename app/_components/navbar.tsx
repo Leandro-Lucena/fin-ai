@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { ChartNoAxesCombinedIcon, MenuIcon } from "lucide-react";
+import GetInTouch from "./get-in-touch";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -58,7 +59,12 @@ const Navbar = () => {
           {generateLink("Assinatura", "/subscription")}
         </div>
       </div>
-      <UserButton />
+      <span className="flex items-center gap-12">
+        <span className="hidden gap-6 opacity-70 md:flex">
+          <GetInTouch />
+        </span>
+        <UserButton showName={true} />
+      </span>
     </nav>
   );
 };

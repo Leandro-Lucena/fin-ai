@@ -10,6 +10,7 @@ import ExpensesPerCategory from "./_components/expenses-per-category";
 import LastTransactions from "./_components/last-transactions";
 import { canUserAddTransaction } from "../_data/can-user-add-transaction";
 import AiReportButton from "./_components/ai-report-button";
+import GetInTouch from "../_components/get-in-touch";
 
 interface HomeProps {
   searchParams: {
@@ -61,6 +62,9 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           </div>
           <LastTransactions lastTransactions={dashboard.lastTransactions} />
         </div>
+        <span className="flex w-full items-center justify-center gap-6 pb-3 opacity-70 md:hidden">
+          <GetInTouch />
+        </span>
       </div>
     </>
   );

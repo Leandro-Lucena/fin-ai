@@ -4,6 +4,7 @@ import { ChartNoAxesCombinedIcon, LogInIcon } from "lucide-react";
 import { SignInButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import GetInTouch from "../_components/get-in-touch";
 
 const LoginPage = async () => {
   const { userId } = await auth();
@@ -17,6 +18,9 @@ const LoginPage = async () => {
         <span className="mb-3 flex items-end gap-3 border-b p-3 px-2">
           <ChartNoAxesCombinedIcon size={45} className="text-primary" />
           <span className="text-4xl font-bold">Fin.AI</span>
+          <span className="flex w-full items-baseline justify-end gap-3 opacity-70">
+            <GetInTouch />
+          </span>
         </span>
         <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Bem vindo</h1>
         <p className="mb-8 text-muted-foreground">
