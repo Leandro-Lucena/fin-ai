@@ -2,6 +2,8 @@
 
 Fin.AI é uma aplicação de controle financeiro desenvolvida para ajudar na organização e gerenciamento do orçamento mensal. Com uma interface intuitiva e funcionalidades avançadas, o Fin.AI permite acompanhar despesas, receitas e planejar melhor seu orçamento.
 
+Confira o Fin.AI na Vercel => https://fin-ai-mu.vercel.app/
+
 ## ✨ Funcionalidades
 
 - 📝 **Cadastro de despesas e receitas**: Registre suas despesas e receitas com categorias personalizadas.
