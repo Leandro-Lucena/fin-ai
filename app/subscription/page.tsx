@@ -70,7 +70,7 @@ const SubscriptionPage = async () => {
               </h2>
               <div className="flex items-center justify-center gap-3">
                 <span className="text-4xl">R$</span>
-                <span className="text-6xl font-semibold">19</span>
+                <span className="text-6xl font-semibold">12</span>
                 <span className="text-2xl text-muted-foreground">/mês</span>
               </div>
             </CardHeader>
