@@ -1,22 +1,22 @@
 # 💲 Fin.AI
 
-Fin.AI é uma aplicação de controle financeiro desenvolvida para ajudar na organização e gerenciamento do orçamento mensal. Com uma interface intuitiva e funcionalidades avançadas, o Fin.AI permite acompanhar despesas, receitas e planejar melhor seu orçamento.
+Fin.AI is a financial management application developed to assist with organizing and managing monthly budgets. With an intuitive interface and advanced features, Fin.AI enables users to track expenses, and income, and better plan their budgets.
 
-Confira o Fin.AI na Vercel => https://fin-ai-mu.vercel.app/
+Check out Fin.AI on Vercel ➡️ https://fin-ai-mu.vercel.app/
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- 📝 **Cadastro de despesas e receitas**: Registre suas despesas e receitas com categorias personalizadas.
-- 📊 **Relatórios e gráficos interativos**: Visualize seu histórico financeiro com relatórios gerados por Inteligência Artificial e gráficos detalhados.
-- 🎯 **Planejamento financeiro**: Estabeleça metas e planeje seu orçamento mensal de forma eficaz.
-- 📄 **Exportação de relatórios**: Exporte relatórios gerados pela Inteligência Artificial em formato PDF para fácil compartilhamento ou arquivamento.
-- 📱 **Design responsivo**: Interface adaptável para uso em desktops, tablets e dispositivos móveis, garantindo uma ótima experiência em qualquer tela.
+- 📝 **Expense and Income Tracking**: Record your expenses and income with customized categories.
+- 📊 **Interactive Reports and Charts**: View your financial history with AI-generated reports and detailed charts.
+- 🎯 **Financial Planning**: Set goals and effectively plan your monthly budget.
+- 📄 **Report Export**: Export AI-generated reports in PDF format for easy sharing or archiving.
+- 📱 **Responsive Design**: Adaptive interface for desktops, tablets, and mobile devices, ensuring a great experience on any screen.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-- 💻 **Frontend**: [Next.js](https://nextjs.org/) - Framework React para desenvolvimento de aplicações web.
-- 🔧 **Backend**: [Node.js](https://nodejs.org/) com [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) para criar APIs.
-- 🗄️ **Banco de Dados**: [PostgreSQL](https://www.postgresql.org/) - Sistema de banco de dados relacional robusto e escalável.
-- 🤖 **Inteligência Artificial**: [OpenAI](https://openai.com/) - Utilizado para análise de dados financeiros, geração de insights automáticos e recomendações personalizadas:
-  - 🔍 **Análise de Padrões de Despesas**: Identifique categorias com maiores gastos e receba sugestões para otimização.
-  - 📈 **Previsão de Orçamento**: Baseado em dados históricos, o Fin.AI prevê receitas e despesas futuras para ajudar no planejamento.
+- 💻 **Frontend**: [Next.js](https://nextjs.org/) - React framework for web application development.
+- 🔧 **Backend**: [Node.js](https://nodejs.org/) with [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) for creating APIs.
+- 🗄️ **Database**: [PostgreSQL](https://www.postgresql.org/) - Robust and scalable relational database system.
+- 🤖 **Artificial Intelligence**: [OpenAI](https://openai.com/) - Used for financial data analysis, automatic insight generation, and personalized recommendations:
+  - 🔍 **Expense Pattern Analysis**: Identify categories with higher expenses and receive suggestions for optimization.
+  - 📈 **Budget Forecasting**: Based on historical data, Fin.AI predicts future income and expenses to aid in planning.
